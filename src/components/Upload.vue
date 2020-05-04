@@ -1,6 +1,6 @@
 <template>
   <div id="upload_button">
-    <label>
+    <label class="button">
       <input
         type="file"
         ngf-select="true"
@@ -10,7 +10,7 @@
         multiple
         onchange="{uploadPhoto}"
       />
-      <span class="button upload">Upload</span>
+      Upload
     </label>
   </div>
 </template>
@@ -23,12 +23,9 @@ export default {
 </script>
 
 <style scoped>
-.upload {
-  background-color: aquamarine;
-}
-
 #upload_button {
   display: inline-block;
+  align-self: center;
 }
 #upload_button input[type="file"] {
   display: none;

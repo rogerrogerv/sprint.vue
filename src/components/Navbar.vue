@@ -1,22 +1,19 @@
 <template>
   <div id="navbar">
-    <div>
-      <button @click="$emit('AllPhotos')" class="button">Home</button>
-    </div>
-    <div>
-      <upload />
-      <h1>{{ title }}</h1>
-    </div>
+    <home />
+    <upload />
   </div>
 </template>
 
 <script>
 import Upload from "./Upload";
+import Home from "./Home";
 
 export default {
   name: "Navbar",
   components: {
-    upload: Upload
+    upload: Upload,
+    home: Home
   },
   data: () => ({
     title: "All Photos"
@@ -26,8 +23,7 @@ export default {
 
 <style scoped>
 #navbar {
-  background-color: lightskyblue;
-  display: flexbox;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }

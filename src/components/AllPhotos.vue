@@ -1,14 +1,18 @@
 <template>
   <div class="photo">
-    <img :src="'data:image/jpeg;base64, ', source" />
+    <img :src="data:image/jpeg;base64," + "source" alt="AllPhotosDiv"/>
   </div>
 </template>
 
 <script>
 export default {
   name: "AllPhotos",
-  props: ["source"],
+  props: ["source"]
 };
 </script>
 
-<style></style>
+<style scoped>
+.photo {
+  display: flex;
+}
+</style>

@@ -17,7 +17,7 @@ const bucket = new AWS.S3({
 });
 
 export function listObjects() {
-  console.log("listing objects");
+  console.log("-------listObjects Start --------------");
   const listObjects = new Promise(resolve => {
     bucket.listObjects((error, data) => {
       if (error) {
@@ -28,7 +28,7 @@ export function listObjects() {
       resolve(data.Contents);
     });
   });
-
+  console.log("-------listObjects Finish --------------");
   return listObjects;
 }
 

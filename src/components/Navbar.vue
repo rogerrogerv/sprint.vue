@@ -1,6 +1,7 @@
 <template>
   <div id="navbar">
-    <home />
+    <home v-on:view="view" />
+    <h1>{{ title }}</h1>
     <upload />
   </div>
 </template>

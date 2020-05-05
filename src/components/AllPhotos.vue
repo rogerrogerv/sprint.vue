@@ -1,13 +1,20 @@
 <template>
-  <div class="photo">
-    <img :src="data:image/jpeg;base64," + "source" alt="AllPhotosDiv"/>
+  <div class="">
+    <img
+      :src="`data:image/jpg;base64, ${photo}`"
+      alt="AllPhotosDiv"
+      width="300"
+      height="300"
+      @click="$emit(`'displayOnePhoto', ${photo}`)"
+    />
   </div>
 </template>
 
 <script>
 export default {
+  title: "All Photos",
   name: "AllPhotos",
-  props: ["source"]
+  props: ["photo", "displayOnePhoto"]
 };
 </script>
 

@@ -3,12 +3,8 @@
     <label class="button">
       <input
         type="file"
-        ngf-select="true"
-        ng-model="new_files"
-        ng-change="fs.uploadFiles(new_files)"
         accept="image/gif, image/jpeg, image/png"
-        multiple
-        onchange="{uploadPhoto}"
+        @change="uploadImg"
       />
       Upload
     </label>
@@ -16,9 +12,17 @@
 </template>
 
 <script>
+import { saveObject } from "../../utils/index.js";
+
 export default {
   name: "Upload",
-  data: () => ({})
+  data: () => ({}),
+  methods: {
+    uploadImg(e) {
+      saveObject(e.target.files[0]);
+      alert("Image uploaded!");
+    }
+  }
 };
 </script>
 
